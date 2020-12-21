@@ -24,8 +24,9 @@ def fib(n):
 
 
 if __name__ == '__main__':
-    r_fib = fib(30)
-    r_factorial = factorial(30)
+    comm = int(input("Enter number> "))
+    r_fib = fib(comm)
+    r_factorial = factorial(comm)
 
 print(timeit.timeit("r_factorial", setup="from __main__ import r_factorial"))
 print(timeit.timeit("r_fib", setup="from __main__ import r_fib"))
