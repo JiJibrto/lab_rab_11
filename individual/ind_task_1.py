@@ -9,7 +9,7 @@
 
 def min_el_from(i, start):
     mini = start
-    if i >= len(Lst):
+    if i > len(Lst):
         print(f"Minimal element is: {mini}")
         return mini
     elif Lst[i - 1] < mini:
@@ -20,3 +20,4 @@ def min_el_from(i, start):
 if __name__ == '__main__':
     Lst = list(map(float, input("Enter elements> ").split(" ")))
     frm = int(input("Enter number from start> "))
+    min_el_from(frm, Lst[frm - 1])
