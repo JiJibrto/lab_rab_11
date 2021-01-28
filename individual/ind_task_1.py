@@ -7,17 +7,17 @@
 # списка , начиная с n-гo.
 
 
-def min_el_from(i, start):
-    mini = start
-    if i > len(Lst):
-        print(f"Minimal element is: {mini}")
+def min_el_from(i, mini, lis):
+    if i == len(lis):
         return mini
-    elif Lst[i - 1] < mini:
-        mini = Lst[i-1]
-    min_el_from(i + 1, mini)
+    else:
+        if lis[i] < mini:
+            mini = lis[i]
+        i += 1
+    return min_el_from(i, mini, lis)
 
 
 if __name__ == '__main__':
-    Lst = list(map(float, input("Enter elements> ").split(" ")))
-    frm = int(input("Enter number from start> "))
-    min_el_from(frm, Lst[frm - 1])
+    Lst = [0.9, 9.8, 5.2, 7.5, 1.2]
+    frm = 2
+    print(min_el_from(frm - 1, Lst[frm - 1], Lst))
